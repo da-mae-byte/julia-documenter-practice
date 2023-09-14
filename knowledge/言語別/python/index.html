@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>python · Julia Documenter Practice</title><script data-outdated-warner src="../../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../assets/documenter.js"></script><script src="../../../siteinfo.js"></script><script src="../../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../../">Julia Documenter Practice</a></span></div><form class="docs-search" action="../../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../../">Index</a></li><li><span class="tocitem">Chapter1</span><ul><li><a class="tocitem" href="../../../chapter1/introduction/">使い方</a></li><li><a class="tocitem" href="../../../chapter1/documenter/">Juliaでホームページ作成</a></li></ul></li><li><span class="tocitem">knowledge</span><ul><li><a class="tocitem" href="../../shortcutmania/">ショートカットマニア</a></li><li><input class="collapse-toggle" id="menuitem-3-2" type="checkbox" checked/><label class="tocitem" for="menuitem-3-2"><span class="docs-label">言語別</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../css/">css</a></li><li><a class="tocitem" href="../js/">js</a></li><li><a class="tocitem" href="../php/">php</a></li><li class="is-active"><a class="tocitem" href>python</a><ul class="internal"><li><a class="tocitem" href="#文字列操作"><span>文字列操作</span></a></li><li><a class="tocitem" href="#配列操作"><span>配列操作</span></a></li><li><a class="tocitem" href="#ループ"><span>ループ</span></a></li><li><a class="tocitem" href="#内包表記"><span>内包表記</span></a></li><li><a class="tocitem" href="#json"><span>json</span></a></li><li><a class="tocitem" href="#ファイル操作"><span>ファイル操作</span></a></li><li><a class="tocitem" href="#日時-datetime"><span>日時 datetime</span></a></li><li><a class="tocitem" href="#タイムゾーン"><span>タイムゾーン</span></a></li><li><a class="tocitem" href="#Pandas"><span>Pandas</span></a></li><li><a class="tocitem" href="#Matplotlib"><span>Matplotlib</span></a></li></ul></li><li><a class="tocitem" href="../sql/">sql</a></li></ul></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">knowledge</a></li><li><a class="is-disabled">言語別</a></li><li class="is-active"><a href>python</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>python</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Python辞典"><a class="docs-heading-anchor" href="#Python辞典">Python辞典</a><a id="Python辞典-1"></a><a class="docs-heading-anchor-permalink" href="#Python辞典" title="Permalink"></a></h1><h2 id="文字列操作"><a class="docs-heading-anchor" href="#文字列操作">文字列操作</a><a id="文字列操作-1"></a><a class="docs-heading-anchor-permalink" href="#文字列操作" title="Permalink"></a></h2><pre><code class="language-python hljs">str_hoge = &#39;python&#39;
+str_date = &#39;20210123&#39;</code></pre><h3 id="**抽出**"><a class="docs-heading-anchor" href="#**抽出**"><strong>抽出</strong></a><a id="**抽出**-1"></a><a class="docs-heading-anchor-permalink" href="#**抽出**" title="Permalink"></a></h3><p>インデックスを指定（スライス）</p><pre><code class="language-python hljs">print(str_hoge[:3])  # pyt
+print(str_hoge[1:5]) # ytho
+print(str_hoge[3:])  # hon
+
+yr = str_date[0:4]  # 2021
+mo = str_date[4:6]  # 01
+dy = str_date[6:8]  # 23</code></pre><pre><code class="language-python hljs">(以下のように考える)
+   +-+-+-+-+-+-+
+   |p|y|t|h|o|n|
+   +-+-+-+-+-+-+
+   0 1 2 3 4 5 6</code></pre><h3 id="**分割**"><a class="docs-heading-anchor" href="#**分割**"><strong>分割</strong></a><a id="**分割**-1"></a><a class="docs-heading-anchor-permalink" href="#**分割**" title="Permalink"></a></h3><pre><code class="language-python hljs">str_datetime = &#39;2021/01/23 12:34:56&#39;
+
+date = str_datetime.split(&#39; &#39;)[0]
+time = str_datetime.split(&#39; &#39;)[1]
+
+str_yr = date.split(&#39;/&#39;)[0]
+str_mo = date.split(&#39;/&#39;)[1]
+str_dy = date.split(&#39;/&#39;)[2]
+
+str_hr = date.split(&#39;:&#39;)[0]
+str_mi = date.split(&#39;:&#39;)[1]
+str_sc = date.split(&#39;:&#39;)[2]</code></pre><pre><code class="language-python hljs">str_conf  = &#39;abc   0  1  2\n&#39;
+str_conf += &#39;def   3 14  6\n&#39;
+str_conf += &#39;xyz  20 51 32&#39;
+
+# 悪い例
+print(str_conf.split(&#39; &#39;))
+
+# 良い例
+print(str_conf.split())
+
+# リスト内包表記で配列作成
+list_conf = [s.split() for s in str_conf.split(&#39;\n&#39;)]
+print(list_conf)
+
+# [&#39;abc&#39;, &#39;&#39;, &#39;&#39;, &#39;0&#39;, &#39;&#39;, &#39;1&#39;, &#39;&#39;, &#39;2\ndef&#39;, &#39;&#39;, &#39;&#39;, &#39;3&#39;, &#39;14&#39;, &#39;&#39;, &#39;6\nxyz&#39;, &#39;&#39;, &#39;20&#39;, &#39;51&#39;, &#39;32&#39;]
+# [&#39;abc&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;def&#39;, &#39;3&#39;, &#39;14&#39;, &#39;6&#39;, &#39;xyz&#39;, &#39;20&#39;, &#39;51&#39;, &#39;32&#39;]
+# [[&#39;abc&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;], [&#39;def&#39;, &#39;3&#39;, &#39;14&#39;, &#39;6&#39;], [&#39;xyz&#39;, &#39;20&#39;, &#39;51&#39;, &#39;32&#39;]]</code></pre><h3 id="**部分削除**"><a class="docs-heading-anchor" href="#**部分削除**"><strong>部分削除</strong></a><a id="**部分削除**-1"></a><a class="docs-heading-anchor-permalink" href="#**部分削除**" title="Permalink"></a></h3><p>両側／片側だけ削除</p><pre><code class="language-python hljs">str_hoge = &#39;ABCABCA&#39;
+print(str_hoge.strip(&#39;A&#39;))   # BCABC
+print(str_hoge.rstrip(&#39;A&#39;))  # ABCABC
+print(str_hoge.lstrip(&#39;A&#39;))  # BCABCA</code></pre><p>端っこから該当する文字を順番に消しているだけなので、 順番を変えても結果は同じ</p><pre><code class="language-python hljs">str_hoge = &#39;ABCABCA&#39;
+print(str_hoge.lstrip(&#39;AB&#39;))  # CABCA
+print(str_hoge.lstrip(&#39;BA&#39;))  # CABCA</code></pre><p>このせいでこんな想定外の結果が出ることもある</p><pre><code class="language-python hljs">path = &#39;home/work/python/test.py&#39;
+print(path.lstrip(&#39;home/work/python&#39;))  # st.py (tとeがデイレクトリのパスに含まれているため)</code></pre><p>こういうときはreplaceを使う</p><pre><code class="language-python hljs">print(path.replace(&#39;home/work/python&#39;, &#39;&#39;)  # /test.py</code></pre><h3 id="**フォーマット**"><a class="docs-heading-anchor" href="#**フォーマット**"><strong>フォーマット</strong></a><a id="**フォーマット**-1"></a><a class="docs-heading-anchor-permalink" href="#**フォーマット**" title="Permalink"></a></h3><pre><code class="language-python hljs">x = 24
+y = 4.5
+z = 50000</code></pre><pre><code class="language-python hljs">print(&#39;xは{}で、yは{}です。&#39;.format(x, y))
+print(&#39;xは{0}で、yは{1}です。xは{0}です。&#39;.format(x, y))
+
+# xは24で、yは4.5です。
+# xは24で、yは4.5です。xは24です。</code></pre><pre><code class="language-python hljs">print(&#39;{:^10}&#39;.format(&#39;値&#39;))
+print(&#39;{:&gt;10}&#39;.format(x))
+print(&#39;{:&gt;10}&#39;.format(y))
+print(&#39;{:&gt;10}&#39;.format(z))
+print(&#39;{:&lt;10}&#39;.format(z))
+
+#     値
+#         24
+#        4.5
+#      50000
+# 50000</code></pre><pre><code class="language-python hljs">print(&#39;{:010}&#39;.format(x))
+print(&#39;{:010}&#39;.format(y))
+print(&#39;{:010}&#39;.format(z))
+
+# 0000000024
+# 00000004.5
+# 0000050000</code></pre><pre><code class="language-python hljs">print(&#39;{:.5f}&#39;.format(y))
+
+# 4.50000</code></pre><pre><code class="language-python hljs">print(&#39;{:,}&#39;.format(z))
+
+# 50,000</code></pre><hr/><h2 id="配列操作"><a class="docs-heading-anchor" href="#配列操作">配列操作</a><a id="配列操作-1"></a><a class="docs-heading-anchor-permalink" href="#配列操作" title="Permalink"></a></h2><p>&lt;br&gt;</p><h3 id="**作成と要素追加**"><a class="docs-heading-anchor" href="#**作成と要素追加**"><strong>作成と要素追加</strong></a><a id="**作成と要素追加**-1"></a><a class="docs-heading-anchor-permalink" href="#**作成と要素追加**" title="Permalink"></a></h3><pre><code class="language-python hljs">list_hoge = [0, 1, 2, 3, 4]
+
+print(list_hoge)
+[0, 1, 2, 3, 4]
+
+print(list_hoge.append(5))
+[0, 1, 2, 3, 4, 5]
+
+print(list_hoge.append([5, 6, 7, 8]))
+[0, 1, 2, 3, 4, [5, 6, 7, 8]]
+
+print(list_hoge.extend([5, 6, 7, 8]))
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+print(list_hoge.insert(0, 100))
+[100, 0, 1, 2, 3, 4]
+
+print(list_hoge.insert(-1, 200))
+[0, 1, 2, 3, 200, 4]</code></pre><h3 id="**削除**"><a class="docs-heading-anchor" href="#**削除**"><strong>削除</strong></a><a id="**削除**-1"></a><a class="docs-heading-anchor-permalink" href="#**削除**" title="Permalink"></a></h3><p>すべての要素をクリア</p><pre><code class="language-python hljs">list_hoge.clear()</code></pre><p>指定した位置の要素を削除し、値を取得</p><pre><code class="language-python hljs">list_hoge.pop(0)
+list_hoge.pop(-1)</code></pre><p>値を検索して要素を削除（最初の1つのみ）</p><pre><code class="language-python hljs">list_fuga = [0, 1, 2, 3, 1, 4, 5]
+list_fuga.remove(1)
+print(list_fuga)  # [0, 2, 3, 1, 4, 5]</code></pre><p>スライスで要素を指定して削除</p><pre><code class="language-python hljs">del list_hoge[0]
+del list_hoge[-1]
+del list_hoge[0:5]
+del list_hoge[:]</code></pre><p>内包表記で削除(フィルタリング)する方法もある</p><pre><code class="language-python hljs">list_fuga = [item for item in list_hoge if re.search(&#39;^[a-z]+$&#39;, item)]</code></pre><h3 id="**文字列化**"><a class="docs-heading-anchor" href="#**文字列化**"><strong>文字列化</strong></a><a id="**文字列化**-1"></a><a class="docs-heading-anchor-permalink" href="#**文字列化**" title="Permalink"></a></h3><pre><code class="language-python hljs">str_list = &#39;/&#39;.join(list_hoge)  # 0/1/2/3/4</code></pre><hr/><h2 id="ループ"><a class="docs-heading-anchor" href="#ループ">ループ</a><a id="ループ-1"></a><a class="docs-heading-anchor-permalink" href="#ループ" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>指定回数ぶんループ（繰り返すだけで何も変数を使用しない場合はアンダースコアにするべきらしい）</p><pre><code class="language-python hljs">for _ in range(5):
+    print(&#39;a&#39;)</code></pre><p>配列参照</p><pre><code class="language-python hljs">for item in list_hoge:
+    print(item)</code></pre><p>インデックス付きで配列参照</p><pre><code class="language-python hljs">for i, item in enumerate(list_hoge):
+    print(str(i) + &#39;:&#39; + item)</code></pre><p>辞書型配列参照</p><pre><code class="language-python hljs">for key in dict_hoge.keys():
+    print(key)
+
+for value in dict_hoge.values():
+    print(value)
+
+for key, value in dict_hoge.items():
+    print(key + &#39;:&#39; + value)</code></pre><hr/><h2 id="内包表記"><a class="docs-heading-anchor" href="#内包表記">内包表記</a><a id="内包表記-1"></a><a class="docs-heading-anchor-permalink" href="#内包表記" title="Permalink"></a></h2><p>&lt;br&gt;</p><h3 id="**リスト内包表記**"><a class="docs-heading-anchor" href="#**リスト内包表記**"><strong>リスト内包表記</strong></a><a id="**リスト内包表記**-1"></a><a class="docs-heading-anchor-permalink" href="#**リスト内包表記**" title="Permalink"></a></h3><pre><code class="language-python hljs">list_orig = [n for i, n in enumerate(range(10))]  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+list_even = [n for i, n in enumerate(range(10)) if n % 2 == 0]  # [0, 2, 4, 6, 8]
+list_odd  = [n for i, n in enumerate(range(10)) if n % 2 != 0]  # [1, 3, 5, 7, 9]</code></pre><h3 id="**辞書内包表記**"><a class="docs-heading-anchor" href="#**辞書内包表記**"><strong>辞書内包表記</strong></a><a id="**辞書内包表記**-1"></a><a class="docs-heading-anchor-permalink" href="#**辞書内包表記**" title="Permalink"></a></h3><pre><code class="language-python hljs"></code></pre><hr/><h2 id="json"><a class="docs-heading-anchor" href="#json">json</a><a id="json-1"></a><a class="docs-heading-anchor-permalink" href="#json" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>JSONファイルを辞書型配列として読み込み</p><pre><code class="language-python hljs">json.load()</code></pre><p>JSON文字列を辞書型配列に変換</p><pre><code class="language-python hljs">json.loads()</code></pre><hr/><h2 id="ファイル操作"><a class="docs-heading-anchor" href="#ファイル操作">ファイル操作</a><a id="ファイル操作-1"></a><a class="docs-heading-anchor-permalink" href="#ファイル操作" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>ディレクトリが無ければ作成</p><pre><code class="language-python hljs">dir_path = &#39;path/to/directory&#39;
+
+if not os.path.exists(dir_path):
+    os.makedirs(dir_path, exist_ok=True)</code></pre><h3 id="**ファイル読み込み**"><a class="docs-heading-anchor" href="#**ファイル読み込み**"><strong>ファイル読み込み</strong></a><a id="**ファイル読み込み**-1"></a><a class="docs-heading-anchor-permalink" href="#**ファイル読み込み**" title="Permalink"></a></h3><p>全て読み込み</p><pre><code class="language-python hljs">with open(filepath) as f:
+    print(f.read())</code></pre><p>最初の一行を読み込み</p><pre><code class="language-python hljs">with open(filepath) as f:
+    print(f.readline())</code></pre><p>一行ずつ配列で読み込み</p><pre><code class="language-python hljs">with open(filepath) as f:
+    print(f.readlines())</code></pre><h3 id="**ファイル書き込み**"><a class="docs-heading-anchor" href="#**ファイル書き込み**"><strong>ファイル書き込み</strong></a><a id="**ファイル書き込み**-1"></a><a class="docs-heading-anchor-permalink" href="#**ファイル書き込み**" title="Permalink"></a></h3><p>新規作成</p><pre><code class="language-python hljs">with open(filepath, mode=&#39;x&#39;) as f:
+    f.write(data)</code></pre><p>上書き、存在しない場合は新規作成</p><pre><code class="language-python hljs">with open(filepath, mode=&#39;w&#39;) as f:
+    f.write(data)</code></pre><p>追記、存在しない場合は新規作成</p><pre><code class="language-python hljs">with open(filepath, mode=&#39;a&#39;) as f:
+    f.write(data)</code></pre><hr/><h2 id="日時-datetime"><a class="docs-heading-anchor" href="#日時-datetime">日時 datetime</a><a id="日時-datetime-1"></a><a class="docs-heading-anchor-permalink" href="#日時-datetime" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>インポート</p><pre><code class="language-python hljs">import datetime
+from pytz import timezone</code></pre><p>現在時刻を、yyyymmdd形式で取得</p><pre><code class="language-python hljs">date_now = datetime.datetime.now()
+date_now = date_now.astimezone(timezone(&#39;Asia/Tokyo&#39;))
+ymd = date_now.strftime(&#39;%Y%m%d&#39;)</code></pre><p>日時を作成</p><pre><code class="language-python hljs">dt = datetime.datetime(2020, 10, 12, 17, 20, 00, 5000)  # ミリ秒まで指定可能
+dt = datetime.datetime.strptime(&#39;2020/10/12 17:20&#39;, &#39;%Y/%m/%d %H:%M&#39;)</code></pre><p>日時から文字列に変換</p><pre><code class="language-python hljs">dt_str = dt.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)</code></pre><p>Unix時間に変換</p><pre><code class="language-python hljs">unixtime = dt.timestamp()</code></pre><p>日時から日や時を抽出</p><pre><code class="language-python hljs">year        = dt.year
+month       = dt.month
+day         = dt.day
+hour        = dt.hour
+minute      = dt.minute
+second      = dt.second
+microsecond = dt.microsecond</code></pre><p>日時同士の計算、日時を操作</p><pre><code class="language-python hljs">dt1 = datetime.datetime.strptime(&#39;2020/01/01 12:00&#39;, &#39;%Y/%m/%d %H:%M&#39;)
+dt2 = datetime.datetime.strptime(&#39;2020/01/02 12:00&#39;, &#39;%Y/%m/%d %H:%M&#39;)
+td  = dt2 - dt1  # durationはtimedelta型
+extra = td + datetime.timedelta(minutes=1)
+</code></pre><p>範囲内かどうかを判定 時間有でもできるはず</p><pre><code class="language-python hljs">sdate = datetime.datetime.strptime(&#39;2020/01/01&#39;, &#39;%Y/%m/%d&#39;)
+edate = datetime.datetime.strptime(&#39;2020/12/31&#39;, &#39;%Y/%m/%d&#39;)
+tgt_date = datetime.datetime.strptime(&#39;2020/06/01&#39;, &#39;%Y/%m/%d&#39;)
+if sdate &lt;= tgt_date &lt;= edate:
+    print(tgt_date)</code></pre><p>timedelta型から日、秒、マイクロ秒を取得（他は計算する必要がある）</p><pre><code class="language-python hljs">td.days
+td.seconds
+td.microseconds</code></pre><hr/><h2 id="タイムゾーン"><a class="docs-heading-anchor" href="#タイムゾーン">タイムゾーン</a><a id="タイムゾーン-1"></a><a class="docs-heading-anchor-permalink" href="#タイムゾーン" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>生成</p><pre><code class="language-python hljs">JST = datetime.timezone(datetime.timedelta(hours=+9), &#39;JST&#39;)</code></pre><p>適用</p><pre><code class="language-python hljs">datetime.datetime.now(JST)</code></pre><hr/><h2 id="Pandas"><a class="docs-heading-anchor" href="#Pandas">Pandas</a><a id="Pandas-1"></a><a class="docs-heading-anchor-permalink" href="#Pandas" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>インポート</p><pre><code class="language-python hljs">import pandas as pd</code></pre><p>標準出力設定 データフレームを省略せず表示</p><pre><code class="language-python hljs">pd.set_option(&#39;display.max_columns&#39;, 99999)
+pd.set_option(&#39;display.max_rows&#39;, 99999)</code></pre><p>データフレームを作成</p><pre><code class="language-python hljs">df = pd.DataFrame(data=None)          # 空のデータフレーム
+df = pd.DataFrame(data=other_series)  # Seriesから作成
+df = pd.DataFrame(data=other_list)    # 配列から作成
+df = pd.DataFrame(data=other_np_arr)  # numpy配列から作成
+df = pd.read_csv(&#39;path/to/csvfile&#39;)   # CSVファイルから作成
+df = pd.read_csv(&#39;path/to/csvfile&#39;, header=None)  # Headerがない場合</code></pre><p>データフレームにデータフレームをappend</p><pre><code class="language-python hljs">df = append(df_other)
+df = pd.concat([df, df_other])
+df = pd.marge(df, df_other, on=col)</code></pre><p>appendやsortをしてバラバラになったindexを振りなおす</p><pre><code class="language-python hljs">df.reset_index(drop=True)</code></pre><p>行・列を抽出 (そのままmatplotlibとかに使える)</p><pre><code class="language-python hljs">data = df.loc[&#39;value&#39;]     # 行
+data = df.loc[:, &#39;value&#39;]  # 列
+data = df.iloc[1]     # 行
+data = df.iloc[:, 1]  # 列</code></pre><p>行・列ごとの差分を取得</p><pre><code class="language-python hljs">diff = df.diff()        # 1行ごとの差分を取得
+diff = df.diff(2)       # 2行ごとの差分を取得
+diff = df.diff(axis=1)  # 1列ごとの差分を取得</code></pre><p>行・列を削除</p><pre><code class="language-python hljs">df = df.drop(&#39;row_name&#39;, axis=0)  # 行
+df = df.drop(&#39;col_name&#39;, axis=1)  # 列
+df = df.drop([&#39;col1,&#39;, &#39;col2&#39;, &#39;col3&#39;], axis=1)  # リストしていも可</code></pre><p>重複削除</p><pre><code class="language-python hljs">df = df.drop_duplicates()</code></pre><p>集約</p><pre><code class="language-python hljs">df = df.groupby(&#39;Date&#39;).mean()</code></pre><p>まとめてdatetime型に変換</p><pre><code class="language-python hljs">pd.to_datetime(df[&#39;Datetime&#39;])</code></pre><p>date列のフォーマットを変換</p><pre><code class="language-python hljs">df = df[&#39;Date&#39;].dt.strftime(&#39;%Y%m%d&#39;)</code></pre><p>年月日抽出（seriesで返る）</p><pre><code class="language-python hljs">df = df[&#39;Date&#39;].dt.year          # 年
+df = df[&#39;Date&#39;].dt.month         # 月
+df = df[&#39;Date&#39;].dt.day           # 日
+df = df[&#39;Date&#39;].dt.hour          # 時
+df = df[&#39;Date&#39;].dt.minute        # 分
+df = df[&#39;Date&#39;].dt.second        # 秒
+df = df[&#39;Date&#39;].dt.weekday_name  # 曜日(文字列)
+df = df[&#39;Date&#39;].dt.dayofweek     # 曜日(数値)</code></pre><p>列をインデックスに割り当て</p><pre><code class="language-python hljs">df = df.set_index(&#39;time&#39;)</code></pre><h3 id="**CSV出力**"><a class="docs-heading-anchor" href="#**CSV出力**"><strong>CSV出力</strong></a><a id="**CSV出力**-1"></a><a class="docs-heading-anchor-permalink" href="#**CSV出力**" title="Permalink"></a></h3><pre><code class="language-python hljs">df.to_csv(filepath)</code></pre><p>a列とb列のみ出力、ヘッダとインデックス無し</p><pre><code class="language-python hljs">df.to_csv(filepath, columns=[&#39;a&#39;, &#39;b&#39;], header=False, index=False)</code></pre><hr/><h2 id="Matplotlib"><a class="docs-heading-anchor" href="#Matplotlib">Matplotlib</a><a id="Matplotlib-1"></a><a class="docs-heading-anchor-permalink" href="#Matplotlib" title="Permalink"></a></h2><p>&lt;br&gt;</p><p>インポート</p><pre><code class="language-python hljs">import matplotlib.pyplot as plt
+import japanize_matplotlib  # 日本語を使う場合</code></pre><p>台紙(fig)を用意し、付箋(ax)を貼り、そこにグラフを書くというイメージ</p><pre><code class="language-python hljs"># 台紙
+fig = plt.figure()
+
+# 付箋(サブプロットという)
+ax = fig.add_subplot()
+
+# 箱ひげ図をプロット
+ax.boxplot(plot_data)</code></pre><p>ラベルを設定</p><pre><code class="language-python hljs">plt.xlabel(&#39;科目&#39;)  # x軸
+plt.ylabel(&#39;点数&#39;)  # y軸</code></pre><p>x軸のデータごとのラベルを設定</p><pre><code class="language-python hljs">ax.set_xticklabels([&#39;国語&#39;, &#39;算数&#39;, &#39;理科&#39;, &#39;社会&#39;])</code></pre><p>目盛線を表示</p><pre><code class="language-python hljs">plt.grid(axis=&#39;y&#39;, which=&#39;major&#39;, color=&#39;#666666&#39;, alpha=0.5)
+
+# 補助目盛線
+plt.minorticks_on()
+plt.grid(axis=&#39;y&#39;, which=&#39;minor&#39;, color=&#39;#999999&#39;, alpha=0.25)</code></pre><p>保存</p><pre><code class="language-python hljs">fig.savefig(&#39;./output/score.png&#39;)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../php/">« php</a><a class="docs-footer-nextpage" href="../sql/">sql »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Thursday 14 September 2023 10:13">Thursday 14 September 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
