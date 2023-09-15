@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Juliaとは · Julia Documenter Practice</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">Julia Documenter Practice</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Index</a></li><li><span class="tocitem">Chapter1</span><ul><li class="is-active"><a class="tocitem" href>Juliaとは</a><ul class="internal"><li><a class="tocitem" href="#斬新なところ"><span>斬新なところ</span></a></li></ul></li><li><a class="tocitem" href="../introduction/">使い方</a></li><li><a class="tocitem" href="../documenter/">Juliaでホームページ作成</a></li></ul></li><li><span class="tocitem">knowledge</span><ul><li><a class="tocitem" href="../../knowledge/shortcutmania/">ショートカットマニア</a></li><li><input class="collapse-toggle" id="menuitem-3-2" type="checkbox"/><label class="tocitem" for="menuitem-3-2"><span class="docs-label">言語別</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../knowledge/言語別/css/">CSS</a></li><li><a class="tocitem" href="../../knowledge/言語別/js/">JavaScript</a></li><li><a class="tocitem" href="../../knowledge/言語別/php/">PHP</a></li><li><a class="tocitem" href="../../knowledge/言語別/python/">Python</a></li><li><a class="tocitem" href="../../knowledge/言語別/sql/">SQL</a></li></ul></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Chapter1</a></li><li class="is-active"><a href>Juliaとは</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Juliaとは</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Juliaとは"><a class="docs-heading-anchor" href="#Juliaとは">Juliaとは</a><a id="Juliaとは-1"></a><a class="docs-heading-anchor-permalink" href="#Juliaとは" title="Permalink"></a></h1><p>以下、Wikipediaより引用。</p><blockquote><p>Julia（ジュリア）は、汎用プログラミング言語水準から高度の計算科学や数値解析水準まで対処するよう設計された高水準言語かつ仕様記述言語、及び動的プログラミング言語である。並行計算、並列計算、分散コンピューティング、及びAdapter パターン不要でC言語やFORTRANへのForeign function interfaceに対応している。ガベージコレクションを行い先行評価を用いるほか、浮動小数点数計算、線型代数学、高速フーリエ変換、正規表現照合のライブラリを利用できる。</p></blockquote><blockquote><p>LLVMコンパイラフレームワークを用いてC言語、C++、Schemeで組まれており、標準ライブラリの殆どは独自に実装された。注目すべき特徴は速度であり、完全に最適化したC言語（PythonやR言語よりも桁違いに速い場合が多い）と比べて計算パフォーマンスの低下は半分程度であると知られている。 一方で実行時には、JITコンパイラによって処理されるため、表面的にはPythonの様にインタプリタとして動作する。</p></blockquote><p>つまり、Pythonみたいに書けて数学に特化しており、Cぐらい速いみたいな感じ？</p><h2 id="斬新なところ"><a class="docs-heading-anchor" href="#斬新なところ">斬新なところ</a><a id="斬新なところ-1"></a><a class="docs-heading-anchor-permalink" href="#斬新なところ" title="Permalink"></a></h2><p>TeXコマンドが使え、一部のUnicode文字が使える。</p><pre><code class="language-julia hljs">julia&gt; √2
+1.4142135623730951
+
+julia&gt; ∛2
+1.2599210498948732
+
+julia&gt; π
+π = 3.1415926535897...
+
+julia&gt; ℯ
+ℯ = 2.7182818284590...
+
+julia&gt; 5 ≠ 6
+true
+
+julia&gt; 2 ≤ 2
+true
+
+julia&gt; 10 ÷ 2
+5</code></pre><p>分数のまま扱える（約分は自動でする）。</p><pre><code class="language-julia hljs">julia&gt; 10 // 2
+5//1</code></pre><p>変数との掛け算の際、「×」を省略できる。</p><pre><code class="language-julia hljs">julia&gt; x = 5
+5
+
+julia&gt; 2x
+10
+
+julia&gt; 2√2
+2.8284271247461903</code></pre><p>割り算どっちでもできる。</p><pre><code class="language-julia hljs">julia&gt; 10 / 2
+5.0
+
+julia&gt; 2 \ 10
+5.0</code></pre><p>文字型と文字列型が別。</p><pre><code class="language-julia hljs">julia&gt; c = &#39;a&#39;
+&#39;a&#39;: ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
+
+julia&gt; s = &quot;abc&quot;
+&quot;abc&quot;
+
+julia&gt; c = &#39;abc&#39;
+ERROR: syntax: character literal contains multiple characters
+Stacktrace:
+ [1] top-level scope
+   @ none:1</code></pre><p><a href="https://qiita.com/sadayuki-matsuno/items/fc5e9ec3894a4b7bfbfb">ほか</a></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Index</a><a class="docs-footer-nextpage" href="../introduction/">使い方 »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Friday 15 September 2023 10:07">Friday 15 September 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
