@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>PowerShellでやってる設定 · Julia Documenter Practice</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">Julia Documenter Practice</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Index</a></li><li><span class="tocitem">Chapter1</span><ul><li><a class="tocitem" href="../../chapter1/about/">Juliaとは</a></li><li><a class="tocitem" href="../../chapter1/introduction/">使い方</a></li><li><a class="tocitem" href="../../chapter1/documenter/">Juliaでホームページ作成</a></li></ul></li><li><span class="tocitem">knowledge</span><ul><li><a class="tocitem" href="../shortcutmania/">ショートカットマニア</a></li><li><input class="collapse-toggle" id="menuitem-3-2" type="checkbox"/><label class="tocitem" for="menuitem-3-2"><span class="docs-label">言語別</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../言語別/css/">CSS</a></li><li><a class="tocitem" href="../言語別/js/">JavaScript</a></li><li><a class="tocitem" href="../言語別/php/">PHP</a></li><li><a class="tocitem" href="../言語別/python/">Python</a></li><li><a class="tocitem" href="../言語別/sql/">SQL</a></li></ul></li><li class="is-active"><a class="tocitem" href>PowerShellでやってる設定</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">knowledge</a></li><li class="is-active"><a href>PowerShellでやってる設定</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>PowerShellでやってる設定</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="PowerShellでやってる設定"><a class="docs-heading-anchor" href="#PowerShellでやってる設定">PowerShellでやってる設定</a><a id="PowerShellでやってる設定-1"></a><a class="docs-heading-anchor-permalink" href="#PowerShellでやってる設定" title="Permalink"></a></h1><p>PowerShellで以下のコマンドを実行すると、bashrcみたいなのがメモ帳で開く。</p><pre><code class="language-powershell hljs">notepad $profile</code></pre><p class="math-container">\[profileの中身はMicrosoft.PowerShell_profile.ps1というファイルで、PowerShellを開くたびに自動で実行される内容。ここにいろいろ書くことで自己流の設定を作ることが出来る。
+
+- 前田が設定している内容
+
+    ```powershell
+    # 上記コマンドを「npp（**n**ote**p**ad $**p**rofileの略）」で実行できるようにし、
+    # メモ帳ではなくサクラエディタで開くようにする設定
+    function npp(){
+      C:&quot;\Program Files (x86)\sakura\sakura.exe&quot; $profile
+    }
+
+    # 初期ディレクトリの指定
+    Set-Location C:\work
+
+    # かわいい設定
+    function Prompt {
+        if (\]</p><p>?) {             Write-Host &quot;<a href="knowledge/*&#39;-&#39;">&quot;(Get-Location)&quot;</a>&quot;  -NoNewLine -ForegroundColor &quot;Green&quot;             return &quot;&gt; &quot;         } else {             Write-Host &quot;<a href="knowledge/*;-;">&quot;(Get-Location)&quot;</a>&quot;  -NoNewLine -ForegroundColor &quot;Red&quot;             return &quot;&gt; &quot;         }     }</p><pre><code class="nohighlight hljs"># エイリアス
+Set-Alias python py
+
+# linuxコマンド
+Set-Alias grep Select-String
+Set-Alias touch ni
+Set-Alias ll ls
+
+function which(){
+  gcm $args[0] | fl
+}
+
+function head(){
+  cat $args[0] -First $args[1]
+}
+
+function tail(){
+  cat $args[0] -Last $args[1]
+}
+
+function tail-f(){
+  # 第2引数が指定されていれば文字コードとして認識
+  if ($args[1]) {
+    Get-Content -Path $args[0] -Wait -Tail 10 -Encoding $args[1]
+  }
+  else {
+    Get-Content -Path $args[0] -Wait -Tail 10
+  }
+}
+
+# よく使うディレクトリへの移動
+function gyo(){
+  cd &quot;C:\work\212_千葉県水産総合研究センター\2023\漁獲報告システム保守管理業務\設計・製造資材\git\&quot;
+}
+
+# サクラエディタを開く
+Set-Alias sakura     C:&quot;\Program Files (x86)\sakura\sakura.exe&quot;
+
+# docker
+# dockerを起動
+function start-docker(){
+  &amp; &quot;C:\Program Files\Docker\Docker\Docker Desktop.exe&quot;
+}
+
+# イメージリスト表示
+function docker-img(){
+  docker images $args
+}
+
+# イメージを削除
+function docker-rmi(){
+  docker rmi $args
+}
+
+# イメージのごみ削除
+function docker-rmi-none(){
+  $noneimgarr = @()
+  foreach($line in $(docker images)){
+    $arr = -split $line
+    if($arr -contains &#39;&lt;none&gt;&#39;){
+      $noneimgarr += $arr[2]
+    }
+  }
+  echo $noneimgarr
+  docker rmi $noneimgarr
+}
+
+# キャッシュを使用しないビルド
+function docker-build(){
+  docker build --progress=plain --no-cache $args
+}
+
+# コンテナリスト表示
+function docker-ps(){
+  docker ps -a $args
+}
+
+# コンテナに入る
+function docker-exec(){
+  docker exec -it $args bash
+}
+
+# コンテナの停止
+function docker-stop(){
+  docker stop $args
+}
+
+# コンテナをすべて停止
+function docker-stop-all(){
+  docker stop $(docker ps -q)
+}
+
+# コンテナを削除
+function docker-rm(){
+  docker rm $args
+}
+
+# コンテナをすべて削除
+function docker-rm-all(){
+  docker rm $(docker ps -aq)
+}
+
+# コンテナを停止して削除
+function docker-stoprm(){
+  docker stop $args
+  docker rm $args
+}
+
+# docker-composeのコンテナリスト表示
+function docker-compose-ps(){
+  docker-compose ps
+}
+
+# docker-composeのコンテナを再起動
+function docker-compose-restart(){
+  echo &quot;docker-compose ps&quot;
+  docker-compose ps
+
+  echo &quot;`ndocker-compose down&quot;
+  docker-compose down
+
+  echo &quot;`ndocker-compose up -d --build&quot;
+  docker-compose up -d --build
+
+  echo &quot;`ndocker-compose ps&quot;
+  docker-compose ps
+}
+
+# dockerのエイリアスをさらにエイリアス
+Set-Alias d          docker
+Set-Alias start-d    start-docker
+Set-Alias d-img      docker-img
+Set-Alias d-build    docker-build
+Set-Alias d-ps       docker-ps
+Set-Alias d-exec     docker-exec
+Set-Alias d-stop     docker-stop
+Set-Alias d-stop-all docker-stop-all
+Set-Alias d-rm       docker-rm
+Set-Alias d-rm-all   docker-rm-all
+Set-Alias d-rmi      docker-rmi
+Set-Alias d-rmi-none docker-rmi-none
+Set-Alias d-stoprm   docker-stoprm
+
+Set-Alias dc         docker-compose
+Set-Alias dc-ps      docker-compose-ps
+Set-Alias dc-restart docker-compose-restart
+
+# Juliaを起動
+function julia(){
+    docker run -it --rm -v $PWD/:/home/work julia:1.9.1
+}
+```</code></pre><p>特にかわいい設定はオススメ。</p><p><img src="../../src/knowledge/Untitled.png" alt="Untitled"/></p><p>（参考）</p><p><a href="https://qiita.com/tomoko523/items/87ccaec05a433b02f67e">PowerShellのprofile.ps1自分用設定 - Qiita</a></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../言語別/sql/">« SQL</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Friday 15 September 2023 10:25">Friday 15 September 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
